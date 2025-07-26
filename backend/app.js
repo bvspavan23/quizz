@@ -18,7 +18,7 @@ const URL=process.env.MONGO_URL
 
 const io = socketio(server, {
   cors: {
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173","https://quizz-self.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true
   },
