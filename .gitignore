@@ -1,0 +1,49 @@
+# Root
+.env
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Ignore node_modules in both frontend and backend
+frontend/node_modules/
+backend/node_modules/
+backend/.env
+
+
+# Ignore build folders
+frontend/dist/
+frontend/build/
+backend/dist/
+backend/build/
+
+# Ignore environment files in both
+frontend/.env
+backend/.env
+
+# Ignore OS-specific files
+*.swp
+*.swo
+
+# Optional: IDEs/editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Optional: coverage/test outputs
+coverage/
+frontend/coverage/
+backend/coverage/
+
+# Optional: debug files
+*.pid
+*.seed
+*.pid.lock
+
+# Optional: Yarn or pnpm lock if you only use npm
+yarn.lock
+pnpm-lock.yaml
