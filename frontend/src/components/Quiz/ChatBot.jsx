@@ -61,7 +61,7 @@ const ChatBot = ({ onQuestionGenerated, onClose }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:8000/generate-question', {
+      const res = await axios.post('http://https://quizz-9oua.onrender.com/generate-question', {
         prompt: input,
       });
 

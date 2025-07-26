@@ -49,7 +49,7 @@ const JoinRoom=()=>{
         // Dispatch join action to store join info in Redux and localStorage
         dispatch(join({ ...joinResponse.joinData, quizId: validQuiz.id }));
 
-        const newSocket = io('http://localhost:8000');
+        const newSocket = io('http://https://quizz-9oua.onrender.com');
         setSocket(newSocket);
         newSocket.emit('join-room', {
           name: name,

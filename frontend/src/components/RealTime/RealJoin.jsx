@@ -43,7 +43,7 @@ const RealJoin=()=>{
       });
       const joinId = joinResponse.joinData._id;
       if (joinResponse && joinResponse.joinData) {
-        const newSocket = io('http://localhost:8000');
+        const newSocket = io('http://https://quizz-9oua.onrender.com');
         setSocket(newSocket);
         newSocket.emit('join-room', {
           name: name,

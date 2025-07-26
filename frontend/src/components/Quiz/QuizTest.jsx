@@ -51,7 +51,7 @@ const QuizTest = () => {
           setQuestions(questionsData);
           setVisitedQuestions(new Set([0]));
         } else {
-          const socketInstance = io("http://localhost:8000");
+          const socketInstance = io("http://https://quizz-9oua.onrender.com");
           console.log(
             "Participant socket connected:",
             socketInstance.connected,
