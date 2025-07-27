@@ -38,7 +38,7 @@ const HostQuiz = () => {
         setQuestions(questionsData);
 
         // Initialize socket connection
-        const socketInstance = io("http://https://quizz-9oua.onrender.com");
+        const socketInstance = io("https://quizz-9oua.onrender.com");
         console.log("Host socket connected:", socketInstance.connected, socketInstance.id);
         setSocket(socketInstance);
 

@@ -38,7 +38,7 @@ const QuizTest = () => {
         
         if (quizResponse.isRealtime) {
           // Initialize socket connection for live quiz
-          const socketInstance = io("http://https://quizz-9oua.onrender.com");
+          const socketInstance = io("https://quizz-9oua.onrender.com");
           setSocket(socketInstance);
 
           // Set up event listeners for live quiz
