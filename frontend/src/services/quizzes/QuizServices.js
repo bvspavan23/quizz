@@ -4,10 +4,10 @@ import { base_url } from "../../utils/url";
 const token = getUserFromStorage();
 console.log("TOKEN FROM SERVICES", token);
 export const getQuizesAPI = async () => {
-  const response = await axios.get(`${base_url}/admin/quizes`,{
-    // headers: {
-    //   Authorization: `Bearer ${token}`,
-    // },
+  const response = await axios.get(`${base_url}/admin/quizes`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   });
   console.log("QUIZES FROM QUIZ SERVICES", response.data);
   return response.data;
