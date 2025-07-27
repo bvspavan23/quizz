@@ -8,7 +8,7 @@ const AuthRoute = ({ children }) => {
   if (token) {
     return children;
   } else {
-    return <Navigate to="/admin" />;
+    return <Navigate to="/quizzes/login" />;
   }
 };
 
