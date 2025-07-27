@@ -20,7 +20,7 @@ const QuizList = () => {
         // Check if user is authenticated
         const token = getUserFromStorage();
         if (!token) {
-          navigate('/login');
+          navigate('/quizzes/login');
           return;
         }
 
@@ -46,7 +46,7 @@ const QuizList = () => {
         console.error("Fetch quizzes error:", err);
         if (err.response?.status === 401) {
           setError("Please login to view your quizzes");
-          navigate('/login');
+          navigate('/quizzes/login');
         } else {
           setError(err.message || "Failed to fetch quizzes");
         }
