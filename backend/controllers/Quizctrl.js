@@ -58,7 +58,16 @@ const quizzes = {
   }),
 
   getAll: asyncHandler(async (req, res) => {
-    const quizzes = await Quiz.find({}).sort({ createdAt: -1 });
+    // Find admin and populate their quizzes
+    const admin = await Admin.findById(req.user).populate({
+      path: 'quizzes',
+      options: { sort: { createdAt: -1 } }
+    });
+    if (!admin) {
+      throw new Error("Admin not found");
+    }
+
+    const quizzes = admin.quizzes;
     res.json({
       count: quizzes.length,
       quizzes: quizzes.map(quiz => ({
