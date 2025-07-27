@@ -27,7 +27,7 @@ const Login = () => {
       setLoading(true);
       const userData = await loginAPI({ email, password });
       dispatch(loginAction(userData));
-      navigate("/admin/quizzes");
+      navigate(`/admin/quizzes/${userData.id}`);
     } catch (error) {
       console.error(error);
       setFormError(

@@ -9,7 +9,7 @@ import { getUserFromStorage } from "../../utils/getUserFromStorage";
 const QuizList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id: adminId } = useParams();
+  const { adminId } = useParams();
   const quizzes = useSelector((state) => state.quiz?.quizzes || []);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
