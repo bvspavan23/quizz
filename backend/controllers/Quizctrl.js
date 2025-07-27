@@ -91,7 +91,25 @@ const quizzes = {
       }))
     });
   }),
-
+  getQuizes: asyncHandler(async (req, res) => {
+    const quizzes = await Quiz.find();
+    res.json({
+      count: quizzes.length,
+      quizzes: quizzes.map(quiz => ({
+        id: quiz._id,
+        name: quiz.name,
+        startdate: quiz.startdate,
+        enddate: quiz.enddate,
+        starttime: quiz.starttime,
+        endtime: quiz.endtime,
+        quizcode: quiz.quizcode,
+        maxpoints: quiz.maxpoints,
+        isRealtime: quiz.isRealtime,
+        createdAt: quiz.createdAt,
+        updatedAt: quiz.updatedAt
+      }))
+    });
+  }),
   getQuizById: asyncHandler(async (req, res) => {
     const quiz = await Quiz.findById(req.params.id);
     if (!quiz) {

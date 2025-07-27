@@ -7,6 +7,8 @@ QuizRouter.post("/api/v1/admin/create-quiz",isAuthenticated, quizController.crea
 
 QuizRouter.get("/api/v1/admin/:adminId/quizes",isAuthenticated,quizController.getAll);
 
+QuizRouter.get("/api/v1/quizes",quizController.getQuizes);
+
 QuizRouter.get("/api/v1/admin/quizes/:id",quizController.getQuizById);
 
 QuizRouter.delete("/api/v1/admin/delete-quiz/:id",isAuthenticated,quizController.deleteQuiz);
