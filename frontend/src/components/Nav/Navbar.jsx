@@ -14,9 +14,34 @@ const Navbar = () => {
     return (
         <nav className="p-5 bg-white shadow md:flex md:items-center md:justify-between z-50">
             <div className="flex justify-between items-center">
-                <span className="anonymous-pro-bold text-2xl cursor-pointer pavan-papi">
-                    {/* <img className="h-10 inline logo-wrapper" src={Logo} alt="LOGO"></img> */}
-                    QUIZZ PRO
+                <span className="anonymous-pro-bold text-2xl cursor-pointer">
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              Q
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              U
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              I
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              Z
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              Z
+            </span>
+            <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              -
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+                P
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              R
+            </span>
+                    <span className="bg-clip-text text-transparent bg-black cursor-pointer inline-block scale-100 transition-transform duration-300 ease-in-out hover:scale-150">
+              O
+            </span>
                 </span>
                 <span className="text-3xl cursor-pointer mx-2 md:hidden block" onClick={toggleNav}>
                     <ion-icon name="menu"></ion-icon>

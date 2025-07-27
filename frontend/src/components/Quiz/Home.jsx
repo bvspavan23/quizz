@@ -27,31 +27,6 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 font-baloo">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-indigo-100/50"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              width: Math.random() * 300 + 100,
-              height: Math.random() * 300 + 100,
-              opacity: 0.3
-            }}
-            animate={{
-              x: [null, Math.random() * window.innerWidth],
-              y: [null, Math.random() * window.innerHeight],
-              transition: {
-                duration: Math.random() * 30 + 20,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }
-            }}
-          />
-        ))}
-      </div>
       <div className="relative z-10 container mx-auto px-4 py-16">
         <motion.section 
           className="text-center py-20"
@@ -160,35 +135,6 @@ const HomePage = () => {
             </div>
           </div>
         </motion.section>
-      </div>
-
-      {/* Floating Quiz Cards Animation */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-white/30 backdrop-blur-sm rounded-xl shadow-md border border-white/20"
-            style={{
-              width: Math.random() * 200 + 100,
-              height: Math.random() * 150 + 100,
-              rotate: Math.random() * 20 - 10
-            }}
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              opacity: 0.5
-            }}
-            animate={{
-              x: [null, Math.random() * window.innerWidth],
-              y: [null, Math.random() * window.innerHeight],
-              transition: {
-                duration: Math.random() * 40 + 20,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }
-            }}
-          />
-        ))}
       </div>
     </div>
   );
