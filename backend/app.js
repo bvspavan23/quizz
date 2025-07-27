@@ -31,7 +31,7 @@ mongoose
   .catch((e) => console.log(e));
 
   const corsOptions = {
-    origin: ["https://quizz-self.vercel.app"], 
+    origin: ["https://quizz-self.vercel.app","http://localhost:5173"], 
     methods: ["GET","POST","PUT","DELETE"],
     credentials: true,
   };
