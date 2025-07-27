@@ -42,7 +42,7 @@ const Register = () => {
         "Account created successfully! Redirecting to login..."
       );
       setTimeout(() => {
-        navigate("/login");
+        navigate("/quizzes/login");
       }, 1500);
     } catch (error) {
       console.error(error);
