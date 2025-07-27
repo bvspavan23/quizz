@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { join } from '../../redux/slice/joinSlice';
-import { getQuizesAPI } from '../../services/quizzes/QuizServices';
+import { getPublicQuizesAPI } from '../../services/quizzes/QuizServices';
 import { joinAPI } from '../../services/quizzes/JoinServices';
 import { io } from 'socket.io-client';
 
@@ -29,7 +29,7 @@ const JoinRoom=()=>{
     setLoading(true);
     setError('');
     try {
-      const response = await getQuizesAPI();
+      const response = await getPublicQuizesAPI();
       if (!response.quizzes || !Array.isArray(response.quizzes)) {
         throw new Error("Invalid quizzes data format");
       }

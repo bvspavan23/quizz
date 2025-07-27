@@ -15,6 +15,16 @@ export const getQuizesAPI = async (adminId) => {
   console.log("QUIZES FROM QUIZ SERVICES", response.data);
   return response.data;
 };
+
+export const getPublicQuizesAPI = async () => {
+  const response = await axios.get(`${base_url}/quizes`, {
+    // headers: {
+    //   Authorization: `Bearer ${token}`,
+    // },
+  });
+  return response.data;
+};
+
 export const getQuizByIdAPI= async (id) => {
   console.log("ID FROM SERVICES::::::::::::::", id);
   
