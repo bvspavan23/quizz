@@ -52,7 +52,7 @@ QUIZZ PRO
           </Link>
         </li>
         <li className="mx-4 my-6 md:my-0 bot cursor-pointer" onClick={closeNav}>
-          <Link to={`/admin/quizzes/${adminId}`} onClick={closeNav}>
+          <Link to={`/admin/${adminId}/quizzes`} onClick={closeNav}>
             Manage Quizzes
           </Link>
         </li>
