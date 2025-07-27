@@ -58,8 +58,13 @@ const quizzes = {
   }),
 
   getAll: asyncHandler(async (req, res) => {
+    const { adminId } = req.params;
+    if (!adminId) {
+      throw new Error("Admin ID is required");
+    }
+
     // Find admin and populate their quizzes
-    const admin = await Admin.findById(req.user).populate({
+    const admin = await Admin.findById(adminId).populate({
       path: 'quizzes',
       options: { sort: { createdAt: -1 } }
     });
