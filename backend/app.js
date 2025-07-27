@@ -19,7 +19,7 @@ const URL=process.env.MONGO_URL
 const io = socketio(server, {
   cors: {
     origin: ["http://localhost:5173","https://quizz-self.vercel.app"],
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   },
   transports: ["websocket", "polling"]
@@ -31,8 +31,8 @@ mongoose
   .catch((e) => console.log(e));
 
   const corsOptions = {
-    origin: ["http://localhost:5173"], 
-    methods: "GET,POST,PUT,DELETE",
+    origin: ["http://localhost:5173","https://quizz-self.vercel.app"], 
+    methods: ["GET","POST","PUT","DELETE"],
     credentials: true,
   };
 
