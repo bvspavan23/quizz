@@ -7,7 +7,7 @@ export const getQuizesAPI = async (adminId) => {
   if (!adminId) {
     throw new Error("Admin ID is required");
   }
-  const response = await axios.get(`${base_url}/${adminId}/admin/quizes`, {
+  const response = await axios.get(`${base_url}/admin/quizes/${adminId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

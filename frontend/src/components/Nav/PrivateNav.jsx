@@ -9,6 +9,11 @@ const PrivateNav = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  // Get admin data from localStorage
+  const userInfo = JSON.parse(localStorage.getItem("userInfo") || "{}");
+  const adminId = userInfo?.id;
+
   const handleLogout = () => {
     localStorage.removeItem("userInfo");
     dispatch(logoutAction());
@@ -47,8 +52,8 @@ QUIZZ PRO
           </Link>
         </li>
         <li className="mx-4 my-6 md:my-0 bot cursor-pointer" onClick={closeNav}>
-          <Link to="/admin/quizzes" onClick={closeNav}>
-            Manage  Quizzes
+          <Link to={`/admin/quizzes/${adminId}`} onClick={closeNav}>
+            Manage Quizzes
           </Link>
         </li>
         <li className="mx-4 my-6 md:my-0 bot cursor-pointer">

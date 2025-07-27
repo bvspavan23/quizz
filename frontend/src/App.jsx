@@ -40,7 +40,7 @@ function App() {
         {/* <Route path="/chat-bot" element={<ChatBot />} /> */}
         <Route path="/quiz/end" element={<End/>} />
         <Route
-          path="/:id/admin/quizzes"
+          path="/admin/quizzes/:id"
           element={
             <AuthRoute>
               <QuizList />
