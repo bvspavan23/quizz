@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Quiz from "./Quizz";
 import { getQuizesAPI } from "../../services/quizzes/QuizServices";
 import { setquizAction } from "../../redux/slice/quizSlice";
@@ -9,6 +9,7 @@ import { getUserFromStorage } from "../../utils/getUserFromStorage";
 const QuizList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { id: adminId } = useParams();
   const quizzes = useSelector((state) => state.quiz?.quizzes || []);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -23,8 +24,12 @@ const QuizList = () => {
           return;
         }
 
+        if (!adminId) {
+          throw new Error("Admin ID is required");
+        }
+
         setLoading(true);
-        const response = await getQuizesAPI();
+        const response = await getQuizesAPI(adminId);
         console.log("API RESPONSE:", response);
         
         if (!response || !response.quizzes) {
@@ -51,7 +56,7 @@ const QuizList = () => {
     };
 
     fetchQuizzes();
-  }, [dispatch, navigate]);
+  }, [dispatch, navigate, adminId]);
 
   const handleHostQuiz = (quizCode, quizId) => {
     navigate(`/host-quiz/${quizCode}/${quizId}`);

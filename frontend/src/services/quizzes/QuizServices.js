@@ -3,8 +3,11 @@ import { getUserFromStorage } from "../../utils/getUserFromStorage";
 import { base_url } from "../../utils/url";
 const token = getUserFromStorage();
 console.log("TOKEN FROM SERVICES", token);
-export const getQuizesAPI = async () => {
-  const response = await axios.get(`${base_url}/admin/quizes`, {
+export const getQuizesAPI = async (adminId) => {
+  if (!adminId) {
+    throw new Error("Admin ID is required");
+  }
+  const response = await axios.get(`${base_url}/${adminId}/admin/quizes`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
