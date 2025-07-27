@@ -5,7 +5,7 @@ const QuizRouter = express.Router();
 
 QuizRouter.post("/api/v1/admin/create-quiz",isAuthenticated, quizController.create);
 
-QuizRouter.get("/api/v1/admin/quizes",quizController.getAll);
+QuizRouter.get("/api/v1/admin/:adminId/quizes",isAuthenticated,quizController.getAll);
 
 QuizRouter.get("/api/v1/admin/quizes/:id",quizController.getQuizById);
 
