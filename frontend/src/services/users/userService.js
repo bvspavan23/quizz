@@ -1,9 +1,7 @@
 import axios from "axios";
 import { base_url } from "../../utils/url";
 import { getUserFromStorage } from "../../utils/getUserFromStorage";
-//! Get the token
 const token = getUserFromStorage();
-//! Login
 export const loginAPI = async ({ email, password }) => {
   const response = await axios.post(`${base_url}/users/login`, {
     email,
