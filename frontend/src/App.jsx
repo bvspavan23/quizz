@@ -19,6 +19,7 @@ import HostQuiz from "./components/RealTime/HostQuiz.jsx";
 import Leaderboard from "./components/Quiz/LeaderBoard.jsx";
 import Update from "./components/Quiz/Update.jsx";
 import End from "./components/Quiz/End.jsx";
+import About from "./components/Quiz/About.jsx";
 // import Compiler from "./components/Compiler.jsx";
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/quizzes/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
         <Route path="/quizzes/register" element={<Register />} />
         <Route path="/quizzes/:id/:joinId/:roomId" element={<QuizTest />} />
         <Route path="/quizzes/join-quizz" element={<Join />} />
